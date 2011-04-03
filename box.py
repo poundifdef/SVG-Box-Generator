@@ -6,7 +6,7 @@ class Box:
       self.thickness = thickness
 
       self.slotlength = 0.75
-      self.margin = self.thickness
+      self.margin = self.thickness*2
       self.originX = 10
       self.originY = 10
 
@@ -54,11 +54,57 @@ class Box:
                 self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length(),
                 self.originY + self.thickness)
 
+      # First spacer
+      self.draw_line(self.originX,
+                self.originY + self.thickness + self.length, 
+                self.originX + self.tab_space_length() + self.margin + self.thickness, 
+                self.originY + self.thickness + self.length)
+
+      # Tab
+      self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness, 
+                self.originY + self.length + 2*self.thickness,
+                self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length(),
+                self.originY + self.length + 2*self.thickness)
+
+      # Second Spacer
+      self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length(),
+                self.originY + self.thickness + self.length, 
+                self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length(),
+                self.originY + self.thickness + self.length)
+
+      # First vertical line
+      self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness, 
+                self.originY + self.length + self.thickness,
+                self.originX + self.tab_space_length() + self.margin + self.thickness,
+                self.originY + self.thickness + self.length + self.thickness)
+
+      # second vertical line
+      self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length(),
+                self.originY + self.length + self.thickness,
+                self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length(),
+                self.originY + self.thickness + self.length + self.thickness)
+
+      self.draw_line(self.originX, 
+                     self.originY + self.thickness,
+                     self.originX,
+                     self.originY + self.thickness + self.length)
+
+      self.draw_line(self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length(),
+                     self.originY + self.thickness,
+                     self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length(),
+                     self.originY + self.thickness + self.length)
+
+      self.draw_rect(self.originX + self.margin, self.originY + self.thickness + ((1-self.slotlength)/2) * self.length, 
+                     self.thickness, self.slotlength * self.length)
+
+      self.draw_rect(self.originX + self.margin + self.width + self.thickness, self.originY + self.thickness + ((1-self.slotlength)/2) * self.length, 
+                     self.thickness, self.slotlength * self.length)
+
    def top_bottom(self):
       # Top/Bottom #
       self.draw_rect(self.originX, self.originY, self.width + 2*self.thickness + 2*self.margin, self.length + 2*self.thickness + 2*self.margin); 
-      self.draw_rect(self.originX + 2*self.thickness + (self.width * (1 - self.slotlength))/2, self.originY + self.thickness, self.width * self.slotlength, self.thickness);
-      self.draw_rect(self.originX + 2*self.thickness + (self.width * (1 - self.slotlength))/2, self.originY + self.length + 2*self.thickness, self.width * self.slotlength, self.thickness);
+      self.draw_rect(self.originX + self.thickness + self.margin + (self.width * (1 - self.slotlength))/2, self.originY + self.margin, self.width * self.slotlength, self.thickness);
+      self.draw_rect(self.originX + self.thickness + self.margin + (self.width * (1 - self.slotlength))/2, self.originY + self.margin + self.thickness + self.length, self.width * self.slotlength, self.thickness);
 
 
 if __name__ == '__main__':
@@ -72,7 +118,8 @@ if __name__ == '__main__':
    print '<defs />'
 
    myBox = Box(50, 100, 25, 3)
-   myBox.front_back_tab();
+
+#   myBox.front_back_tab();
    myBox.top_bottom();
 
    print '</svg>';
