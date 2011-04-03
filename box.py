@@ -87,18 +87,90 @@ class Box:
       self.draw_line(self.originX, 
                      self.originY + self.thickness,
                      self.originX,
-                     self.originY + self.thickness + self.length)
+                     self.originY + self.thickness + self.height)
 
       self.draw_line(self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length(),
                      self.originY + self.thickness,
                      self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length(),
-                     self.originY + self.thickness + self.length)
+                     self.originY + self.thickness + self.height)
 
       self.draw_rect(self.originX + self.margin, self.originY + self.thickness + ((1-self.slotlength)/2) * self.length, 
                      self.thickness, self.slotlength * self.length)
 
       self.draw_rect(self.originX + self.margin + self.width + self.thickness, self.originY + self.thickness + ((1-self.slotlength)/2) * self.length, 
                      self.thickness, self.slotlength * self.length)
+
+   def sides(self):
+
+      # First spacer
+      self.draw_line(self.originX,
+                self.originY + self.thickness, 
+                self.originX + self.tab_space_length() + self.margin + self.thickness, 
+                self.originY + self.thickness)
+
+      # Tab
+      self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness, 
+                self.originY,
+                self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length(),
+                self.originY)
+
+      # Second Spacer
+      self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length(),
+                self.originY + self.thickness, 
+                self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length(),
+                self.originY + self.thickness)
+
+      # First vertical line
+      self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness, 
+                self.originY,
+                self.originX + self.tab_space_length() + self.margin + self.thickness,
+                self.originY + self.thickness)
+
+      # second vertical line
+      self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length(),
+                self.originY,
+                self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length(),
+                self.originY + self.thickness)
+
+      # First spacer
+      self.draw_line(self.originX,
+                self.originY + self.thickness + self.length, 
+                self.originX + self.tab_space_length() + self.margin + self.thickness, 
+                self.originY + self.thickness + self.length)
+
+      # Tab
+      self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness, 
+                self.originY + self.length + 2*self.thickness,
+                self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length(),
+                self.originY + self.length + 2*self.thickness)
+
+      # Second Spacer
+      self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length(),
+                self.originY + self.thickness + self.length, 
+                self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length(),
+                self.originY + self.thickness + self.length)
+
+      # First vertical line
+      self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness, 
+                self.originY + self.length + self.thickness,
+                self.originX + self.tab_space_length() + self.margin + self.thickness,
+                self.originY + self.thickness + self.length + self.thickness)
+
+      # second vertical line
+      self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length(),
+                self.originY + self.length + self.thickness,
+                self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length(),
+                self.originY + self.thickness + self.length + self.thickness)
+
+      self.draw_line(self.originX, 
+                     self.originY + self.thickness,
+                     self.originX,
+                     self.originY + self.thickness + self.height)
+
+      self.draw_line(self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length(),
+                     self.originY + self.thickness,
+                     self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length(),
+                     self.originY + self.thickness + self.length)
 
    def top_bottom(self):
       # Top/Bottom #
@@ -119,8 +191,9 @@ if __name__ == '__main__':
 
    myBox = Box(50, 100, 25, 3)
 
-#   myBox.front_back_tab();
-   myBox.top_bottom();
+   myBox.front_back_tab();
+   #myBox.top_bottom();
+   #myBox.sides();
 
    print '</svg>';
 
