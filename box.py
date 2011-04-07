@@ -196,9 +196,9 @@ if __name__ == '__main__':
 # length, width, height, thickness
    myBox = Box(50, 100, 25, 3)
 
-   #myBox.front_back_tab();
+   myBox.front_back_tab();
    #myBox.top_bottom();
-   myBox.sides();
+   #myBox.sides();
 
    print '</svg>';
 
