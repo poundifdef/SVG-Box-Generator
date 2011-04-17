@@ -1,12 +1,20 @@
 class Box:
    def __init__(self, length, width, height, thickness):
+      # Length, Width, and Height of the box
       self.length = length
       self.width = width
       self.height = height
+
+      # Thickness of material we are cutting
       self.thickness = thickness
 
+      # The box's interlocking parts span this percentage of the side's length
       self.slotlength = 0.75
-      self.margin = self.thickness*2
+
+      # How much margin between the interlocking slot and the edge of the panel
+      self.margin = self.thickness
+
+      # The "origin" from whence we draw onto the SVG canvas
       self.originX = 10
       self.originY = 10
 
@@ -182,23 +190,27 @@ class Box:
       self.draw_rect(self.originX + self.thickness + self.margin + (self.width * (1 - self.slotlength))/2, self.originY + self.margin, self.width * self.slotlength, self.thickness);
       self.draw_rect(self.originX + self.thickness + self.margin + (self.width * (1 - self.slotlength))/2, self.originY + self.margin + self.thickness + self.length, self.width * self.slotlength, self.thickness);
 
+   def print_all_faces(self):
+      print '<?xml version="1.0" encoding="utf-8" ?>'
+      print '<svg baseProfile="full" version="1.1"'
+      print ' width="%dmm" height="%dmm">' % (self.width+2*self.thickness+2*self.margin+2*self.originX, self.length+self.width+self.height+6*self.thickness+2*self.margin+2*self.originY)
+      print 'xmlns="http://www.w3.org/2000/svg" '
+      print 'xmlns:ev="http://www.w3.org/2001/xml-events" '
+      print 'xmlns:xlink="http://www.w3.org/1999/xlink">'
+      print '<defs />'
+
+      self.front_back_tab();
+      self.originY += self.height + 20
+      self.top_bottom();
+      self.originY += self.length + 20
+      self.sides();
+
+      print '</svg>';
 
 if __name__ == '__main__':
 
+   # length, width, height, thickness (units are millimeters)
+   myBox = Box(58, 96, 38, 3)
+   myBox.print_all_faces()
 
-   print '<?xml version="1.0" encoding="utf-8" ?>'
-   print '<svg baseProfile="full" self.height="100%" version="1.1" self.width="100%" '
-   print 'xmlns="http://www.w3.org/2000/svg" '
-   print 'xmlns:ev="http://www.w3.org/2001/xml-events" '
-   print 'xmlns:xlink="http://www.w3.org/1999/xlink">'
-   print '<defs />'
-
-# length, width, height, thickness
-   myBox = Box(50, 100, 25, 3)
-
-   myBox.front_back_tab();
-   #myBox.top_bottom();
-   #myBox.sides();
-
-   print '</svg>';
 

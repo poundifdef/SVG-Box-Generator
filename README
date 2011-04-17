@@ -1,0 +1,19 @@
+By specifying the desired dimensions of a box, this script outputs an
+SVG file consisting of the box's faces. The panels interlock. I wrote this
+to generate enclosure designs for my projects that I can use in a laser
+cutter.
+
+To use this script, create a new Box object with the desired parameters
+and call print_all_faces():
+
+    # length, width, height, material thickness (units are millimeters)
+    myBox = Box(58, 96, 38, 3)
+    myBox.print_all_faces()
+
+This outputs the SVG file (which are an XML-based format) to the console,
+which you can then pipe to a file. This opens without a problem in Inkscape.
+See "out.svg" as an example.
+
+The Box class contains a few variables that you might be interested in 
+tweaking. These are explained in the comments at the beginning of the
+code.
