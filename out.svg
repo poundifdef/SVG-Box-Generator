@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<svg baseProfile="full" version="1.1"
+ width="128mm" height="236mm">
+xmlns="http://www.w3.org/2000/svg" 
+xmlns:ev="http://www.w3.org/2001/xml-events" 
+xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs />
+<line fill="none" stroke="rgb(0,0,255)" stroke-width="0.01mm" x1="10mm" y1="13mm" x2="28.0mm" y2="13mm" />
+<line fill="none" stroke="rgb(0,0,255)" stroke-width="0.01mm" x1="28.0mm" y1="10mm" x2="100.0mm" y2="10mm" />
+<line fill="none" stroke="rgb(0,0,255)" stroke-width="0.01mm" x1="100.0mm" y1="13mm" x2="118.0mm" y2="13mm" />
+<line fill="none" stroke="rgb(0,0,255)" stroke-width="0.01mm" x1="28.0mm" y1="10mm" x2="28.0mm" y2="13mm" />
+<line fill="none" stroke="rgb(0,0,255)" stroke-width="0.01mm" x1="100.0mm" y1="10mm" x2="100.0mm" y2="13mm" />
+<line fill="none" stroke="rgb(0,0,255)" stroke-width="0.01mm" x1="10mm" y1="51mm" x2="28.0mm" y2="51mm" />
+<line fill="none" stroke="rgb(0,0,255)" stroke-width="0.01mm" x1="28.0mm" y1="54mm" x2="100.0mm" y2="54mm" />
+<line fill="none" stroke="rgb(0,0,255)" stroke-width="0.01mm" x1="100.0mm" y1="51mm" x2="118.0mm" y2="51mm" />
+<line fill="none" stroke="rgb(0,0,255)" stroke-width="0.01mm" x1="28.0mm" y1="51mm" x2="28.0mm" y2="54mm" />
+<line fill="none" stroke="rgb(0,0,255)" stroke-width="0.01mm" x1="100.0mm" y1="51mm" x2="100.0mm" y2="54mm" />
+<line fill="none" stroke="rgb(0,0,255)" stroke-width="0.01mm" x1="10mm" y1="13mm" x2="10mm" y2="51mm" />
+<line fill="none" stroke="rgb(0,0,255)" stroke-width="0.01mm" x1="118.0mm" y1="13mm" x2="118.0mm" y2="51mm" />
+<rect fill="none" stroke="rgb(0,0,255)" stroke-width="0.01mm" x="13mm" y="17.75mm" width="3mm" height="28.5mm" />
+<rect fill="none" stroke="rgb(0,0,255)" stroke-width="0.01mm" x="112mm" y="17.75mm" width="3mm" height="28.5mm" />
+<rect fill="none" stroke="rgb(0,0,255)" stroke-width="0.01mm" x="10mm" y="68mm" width="108mm" height="70mm" />
+<rect fill="none" stroke="rgb(0,0,255)" stroke-width="0.01mm" x="28.0mm" y="71mm" width="72.0mm" height="3mm" />
+<rect fill="none" stroke="rgb(0,0,255)" stroke-width="0.01mm" x="28.0mm" y="132mm" width="72.0mm" height="3mm" />
+<line fill="none" stroke="rgb(0,0,255)" stroke-width="0.01mm" x1="10mm" y1="149mm" x2="14.75mm" y2="149mm" />
+<line fill="none" stroke="rgb(0,0,255)" stroke-width="0.01mm" x1="14.75mm" y1="146mm" x2="43.25mm" y2="146mm" />
+<line fill="none" stroke="rgb(0,0,255)" stroke-width="0.01mm" x1="43.25mm" y1="149mm" x2="48.0mm" y2="149mm" />
+<line fill="none" stroke="rgb(0,0,255)" stroke-width="0.01mm" x1="14.75mm" y1="146mm" x2="14.75mm" y2="149mm" />
+<line fill="none" stroke="rgb(0,0,255)" stroke-width="0.01mm" x1="43.25mm" y1="146mm" x2="43.25mm" y2="149mm" />
+<line fill="none" stroke="rgb(0,0,255)" stroke-width="0.01mm" x1="10mm" y1="207mm" x2="14.75mm" y2="207mm" />
+<line fill="none" stroke="rgb(0,0,255)" stroke-width="0.01mm" x1="14.75mm" y1="210mm" x2="43.25mm" y2="210mm" />
+<line fill="none" stroke="rgb(0,0,255)" stroke-width="0.01mm" x1="43.25mm" y1="207mm" x2="48.0mm" y2="207mm" />
+<line fill="none" stroke="rgb(0,0,255)" stroke-width="0.01mm" x1="14.75mm" y1="207mm" x2="14.75mm" y2="210mm" />
+<line fill="none" stroke="rgb(0,0,255)" stroke-width="0.01mm" x1="43.25mm" y1="207mm" x2="43.25mm" y2="210mm" />
+<line fill="none" stroke="rgb(0,0,255)" stroke-width="0.01mm" x1="10mm" y1="149mm" x2="10mm" y2="207mm" />
+<line fill="none" stroke="rgb(0,0,255)" stroke-width="0.01mm" x1="48.0mm" y1="149mm" x2="48.0mm" y2="207mm" />
+</svg>
