@@ -11,6 +11,9 @@ class Box:
       # The box's interlocking parts span this percentage of the side's length
       self.slotlength = 0.75
 
+      # The kerf of the laser. That is, how much material the laser burns away
+      self.kerf = 0.20
+
       # How much margin between the interlocking slot and the edge of the panel
       self.margin = self.thickness
 
@@ -210,7 +213,7 @@ class Box:
 if __name__ == '__main__':
 
    # length, width, height, thickness (units are millimeters)
-   myBox = Box(58, 96, 38, 3)
+   myBox = Box(58, 96, 40, 3)
    myBox.print_all_faces()
 
 
