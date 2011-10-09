@@ -67,9 +67,23 @@ class Box:
                      self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length()/4,
                      self.originY)
 
+      # Second vertical line
+      self.draw_line(
+                     self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length()/4,
+                     self.originY,
+                     self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length()/4,
+                     self.originY + self.thickness)
+
       # Space between tabs
       self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length()/4,
                      self.originY + self.thickness, 
+                     self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length()/2,
+                     self.originY + self.thickness)
+
+      # Third vertical line
+      self.draw_line(
+                     self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length()/2,
+                     self.originY,
                      self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length()/2,
                      self.originY + self.thickness)
 
