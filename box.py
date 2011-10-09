@@ -95,19 +95,23 @@ class Box:
                 self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length(),
                 self.originY + self.thickness + self.height + self.thickness)
 
+      # Left edge of piece
       self.draw_line(self.originX, 
                      self.originY + self.thickness,
                      self.originX,
                      self.originY + self.thickness + self.height)
 
+      # Right edge of piece
       self.draw_line(self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length(),
                      self.originY + self.thickness,
                      self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length(),
                      self.originY + self.thickness + self.height)
 
+      # Left tab slot
       self.draw_rect(self.originX + self.margin, self.originY + self.thickness + ((1-self.slotlength)/2) * self.height, 
                      self.thickness, self.slotlength * self.height)
 
+      # Right tab slot
       self.draw_rect(self.originX + self.margin + self.width + self.thickness, self.originY + self.thickness + ((1-self.slotlength)/2) * self.height, 
                      self.thickness, self.slotlength * self.height)
 
