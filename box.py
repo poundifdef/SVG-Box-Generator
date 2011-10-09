@@ -35,22 +35,24 @@ class Box:
 
    def front_back_tab(self):
 
-      # First spacer
+      ####################################
+      #     ASCII ART OF THIS PANEL      #
+      #          ____      ____          #
+      #  _______|    |____|    |_______  #
+      # |   _                      _   | #
+      # |  | |                    | |  | #
+      # |  | |                    | |  | #
+      # |  |_|                    |_|  | #
+      # |_______      ____      _______| #
+      #         |____|    |____|         #
+      #                                  #
+      ####################################
+
+      ## Top tabs
+      # Space before left tab 
       self.draw_line(self.originX,
                 self.originY + self.thickness, 
                 self.originX + self.tab_space_length() + self.margin + self.thickness, 
-                self.originY + self.thickness)
-
-      # Tab
-      self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness, 
-                self.originY,
-                self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length(),
-                self.originY)
-
-      # Second Spacer
-      self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length(),
-                self.originY + self.thickness, 
-                self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length(),
                 self.originY + self.thickness)
 
       # First vertical line
@@ -59,12 +61,40 @@ class Box:
                 self.originX + self.tab_space_length() + self.margin + self.thickness,
                 self.originY + self.thickness)
 
-      # second vertical line
+      # Top left tab
+      self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness, 
+                     self.originY,
+                     self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length()/4,
+                     self.originY)
+
+      # Space between tabs
+      self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length()/4,
+                     self.originY + self.thickness, 
+                     self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length()/2,
+                     self.originY + self.thickness)
+
+      # Top right tab
+      self.draw_line(
+                     self.originX + self.tab_space_length() + self.margin + self.thickness + 3*self.tab_length()/4,
+                     self.originY,
+                     self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length() ,
+                     self.originY)
+
+      # fourth vertical line
       self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length(),
                 self.originY,
                 self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length(),
                 self.originY + self.thickness)
 
+      # Space after right tab
+      self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length(),
+                self.originY + self.thickness, 
+                self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length(),
+                self.originY + self.thickness)
+
+
+
+      ## Bottom tab
       # First spacer
       self.draw_line(self.originX,
                 self.originY + self.thickness + self.height, 
@@ -107,6 +137,7 @@ class Box:
                      self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length(),
                      self.originY + self.thickness + self.height)
 
+      ## Slots for tabs
       # Left tab slot
       self.draw_rect(self.originX + self.margin, self.originY + self.thickness + ((1-self.slotlength)/2) * self.height, 
                      self.thickness, self.slotlength * self.height)
