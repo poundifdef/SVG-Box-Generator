@@ -109,22 +109,10 @@ class Box:
 
 
       ## Bottom tab
-      # First spacer
+      # Space before left tab 
       self.draw_line(self.originX,
                 self.originY + self.thickness + self.height, 
                 self.originX + self.tab_space_length() + self.margin + self.thickness, 
-                self.originY + self.thickness + self.height)
-
-      # Tab
-      self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness, 
-                self.originY + self.height + 2*self.thickness,
-                self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length(),
-                self.originY + self.height + 2*self.thickness)
-
-      # Second Spacer
-      self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length(),
-                self.originY + self.thickness + self.height, 
-                self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length(),
                 self.originY + self.thickness + self.height)
 
       # First vertical line
@@ -133,11 +121,51 @@ class Box:
                 self.originX + self.tab_space_length() + self.margin + self.thickness,
                 self.originY + self.thickness + self.height + self.thickness)
 
-      # second vertical line
+      # Top left tab
+      self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness, 
+                     self.originY + self.height + 2*self.thickness,
+                     self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length()/4,
+                     self.originY + self.height + 2*self.thickness)
+
+      # Second vertical line
+      self.draw_line(
+                     self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length()/4,
+                     self.originY + self.height + self.thickness,
+                     self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length()/4,
+                     self.originY + self.thickness + self.height + self.thickness)
+
+      # Space between tabs
+      self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length()/4,
+                     self.originY + self.thickness + self.height, 
+                     self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length()/2,
+                     self.originY + self.thickness + self.height)
+
+      # Third vertical line
+      self.draw_line(
+                     self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length()/2,
+                     self.originY + self.height + self.thickness,
+                     self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length()/2,
+                     self.originY + self.thickness + self.height + self.thickness)
+
+      # Top right tab
+      self.draw_line(
+                     self.originX + self.tab_space_length() + self.margin + self.thickness + 3*self.tab_length()/4,
+                     self.originY + self.height + 2*self.thickness,
+                     self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length() ,
+                     self.originY + self.height + 2*self.thickness)
+
+      # fourth vertical line
       self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length(),
                 self.originY + self.height + self.thickness,
                 self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length(),
                 self.originY + self.thickness + self.height + self.thickness)
+
+      # Space after right tab
+      self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length(),
+                self.originY + self.thickness + self.height, 
+                self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length(),
+                self.originY + self.thickness + self.height)
+
 
       # Left edge of piece
       self.draw_line(self.originX, 
@@ -151,14 +179,100 @@ class Box:
                      self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length(),
                      self.originY + self.thickness + self.height)
 
+
       ## Slots for tabs
-      # Left tab slot
+      #  Left tab slot
       self.draw_rect(self.originX + self.margin, self.originY + self.thickness + ((1-self.slotlength)/2) * self.height, 
                      self.thickness, self.slotlength * self.height)
 
-      # Right tab slot
+     # Right tab slot
       self.draw_rect(self.originX + self.margin + self.width + self.thickness, self.originY + self.thickness + ((1-self.slotlength)/2) * self.height, 
                      self.thickness, self.slotlength * self.height)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      # First spacer
+#      self.draw_line(self.originX,
+#                self.originY + self.thickness + self.height, 
+#                self.originX + self.tab_space_length() + self.margin + self.thickness, 
+#                self.originY + self.thickness + self.height)
+
+      # Tab#
+#      self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness, 
+#                self.originY + self.height + 2*self.thickness,
+#                self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length(),
+#                self.originY + self.height + 2*self.thickness)#
+
+      # Second Spacer
+#      self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length(),
+#                self.originY + self.thickness + self.height, 
+#                self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length(),
+#                self.originY + self.thickness + self.height)
+
+      # First vertical line
+#      self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness, 
+#                self.originY + self.height + self.thickness,
+#                self.originX + self.tab_space_length() + self.margin + self.thickness#,
+#                self.originY + self.thickness + self.height + self.thickness)
+
+      # second vertical line
+ #     self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length(),
+ #               self.originY + self.height + self.thickness,
+#                self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length()#,
+    #            self.originY + self.thickness + self.height + self.thickness)
+
+      # Left edge of piece
+     # self.draw_line(self.originX, 
+    #                 self.originY + self.thickness,
+     #                self.originX,
+     #                self.originY + self.thickness + self.height)
+#
+      # Right edge of piece
+     # self.draw_line(self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length(),
+     #                self.originY + self.thickness,
+     #                self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length(),
+     #                self.originY + self.thickness + self.height)
+
+      ## Slots for tabs
+      # Left tab slot
+     # self.draw_rect(self.originX + self.margin, self.originY + self.thickness + ((1-self.slotlength)/2) * self.height, 
+     #                self.thickness, self.slotlength * self.height)
+
+      # Right tab slot
+     # self.draw_rect(self.originX + self.margin + self.width + self.thickness, self.originY + self.thickness + ((1-self.slotlength)/2) * self.height, 
+     #                self.thickness, self.slotlength * self.height)
 
    def sides(self):
 
