@@ -284,9 +284,36 @@ class Box:
 
    def top_bottom(self):
       # Top/Bottom #
-      self.draw_rect(self.originX, self.originY, self.width + 2*self.thickness + 2*self.margin, self.length + 2*self.thickness + 2*self.margin); 
-      self.draw_rect(self.originX + self.thickness + self.margin + (self.width * (1 - self.slotlength))/2, self.originY + self.margin, self.width * self.slotlength, self.thickness);
-      self.draw_rect(self.originX + self.thickness + self.margin + (self.width * (1 - self.slotlength))/2, self.originY + self.margin + self.thickness + self.length, self.width * self.slotlength, self.thickness);
+
+      # Outer border
+      self.draw_rect(self.originX,
+                     self.originY,
+                     self.width + 2*self.thickness + 2*self.margin,
+                     self.length + 2*self.thickness + 2*self.margin); 
+
+      # Top slots
+      self.draw_rect(self.originX + self.thickness + self.margin + (self.width * (1 - self.slotlength))/2,
+                     self.originY + self.margin,
+                     self.tab_length()/4, 
+                     self.thickness);
+
+
+      self.draw_rect(self.originX + self.tab_space_length() + self.margin + self.thickness + 3*self.tab_length()/4,
+                     self.originY + self.margin,
+                     self.tab_length()/4, 
+                     self.thickness);
+
+      # Bottom slots
+      self.draw_rect(self.originX + self.thickness + self.margin + (self.width * (1 - self.slotlength))/2,
+                     self.originY + self.margin + self.thickness + self.length,
+                     self.tab_length()/4, 
+                     self.thickness);
+
+
+      self.draw_rect(self.originX + self.tab_space_length() + self.margin + self.thickness + 3*self.tab_length()/4,
+                     self.originY + self.margin + self.thickness + self.length,
+                     self.tab_length()/4, 
+                     self.thickness);
 
    def print_all_faces(self):
       print '<?xml version="1.0" encoding="utf-8" ?>'
