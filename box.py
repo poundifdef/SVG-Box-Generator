@@ -77,14 +77,14 @@ class Box:
       # Space between tabs
       self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length()/4,
                      self.originY + self.thickness, 
-                     self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length()/2,
+                     self.originX + self.tab_space_length() + self.margin + self.thickness + 3*self.tab_length()/4,
                      self.originY + self.thickness)
 
       # Third vertical line
       self.draw_line(
-                     self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length()/2,
+                     self.originX + self.tab_space_length() + self.margin + self.thickness + 3*self.tab_length()/4,
                      self.originY,
-                     self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length()/2,
+                    self.originX + self.tab_space_length() + self.margin + self.thickness + 3*self.tab_length()/4,
                      self.originY + self.thickness)
 
       # Top right tab
@@ -137,14 +137,14 @@ class Box:
       # Space between tabs
       self.draw_line(self.originX + self.tab_space_length() + self.margin + self.thickness + self.tab_length()/4,
                      self.originY + self.thickness + self.height, 
-                     self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length()/2,
+                     self.originX + self.tab_space_length() + self.margin + self.thickness + 3*self.tab_length()/4,
                      self.originY + self.thickness + self.height)
 
       # Third vertical line
       self.draw_line(
-                     self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length()/2,
+                     self.originX + self.tab_space_length() + self.margin + self.thickness + 3*self.tab_length()/4,
                      self.originY + self.height + self.thickness,
-                     self.originX + 2*self.tab_space_length() + 2*self.margin + 2*self.thickness + self.tab_length()/2,
+                     self.originX + self.tab_space_length() + self.margin + self.thickness + 3*self.tab_length()/4,
                      self.originY + self.thickness + self.height + self.thickness)
 
       # Top right tab
@@ -384,7 +384,7 @@ class Box:
    def print_all_faces(self):
       print '<?xml version="1.0" encoding="utf-8" ?>'
       print '<svg baseProfile="full" version="1.1"'
-      print ' width="%dmm" height="%dmm">' % (self.width+2*self.thickness+2*self.margin+2*self.originX, self.length+self.width+self.height+6*self.thickness+2*self.margin+2*self.originY)
+      print ' width="%dmm" height="%dmm">' % (self.width+2*self.thickness+2*self.margin+2*self.originX, self.length+self.width+self.height+6*self.thickness+2*self.margin+2*self.originY + 40)
       print 'xmlns="http://www.w3.org/2000/svg" '
       print 'xmlns:ev="http://www.w3.org/2001/xml-events" '
       print 'xmlns:xlink="http://www.w3.org/1999/xlink">'
@@ -401,7 +401,7 @@ class Box:
 if __name__ == '__main__':
 
    # length, width, height, thickness (units are millimeters)
-   myBox = Box(58, 96, 40, 3)
+   myBox = Box(40, 30, 20, 3)
    myBox.print_all_faces()
 
 
